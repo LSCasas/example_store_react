@@ -1,21 +1,36 @@
-import PageSection from "../components/PageSection"
+import PageSection from "../components/PageSection";
+import fakeStoreImg from "../assets/fake_store.png";
 
-export default function HomePage () {
-    return (
-        <>
-        <div className="flex justify-center items-center flex-col w-full min-h-dvh ">
-        <h1 className="text-4xl font-bold text-center p-4">Fake Store</h1>
-        <p className="text-center" > Bienvenido</p>
-        <PageSection className={"bg-red-300"} title={"Un titulo"} contentClassName={"bg-teal-300"}>
-            <h2>Vendemos de todo</h2>
-        </PageSection>
+export default function HomePage() {
+  return (
+    <>
+      <div className="flex flex-col items-center justify-center w-full min-h-dvh bg-white text-gray-800">
+        <header className="text-center py-10">
+          <h1 className="text-5xl font-extrabold mb-4">
+            Welcome to Fake Store
+          </h1>
+          <p className="text-xl max-w-2xl mx-auto">
+            Your trusted online shop for everything.
+          </p>
+        </header>
+
         <PageSection>
-            <div className="w-full grid grid-cols-2 gap-2">
-            <img src="https://static.vecteezy.com/system/resources/previews/015/131/858/non_2x/flat-cartoon-style-shop-facade-front-view-modern-flat-storefront-or-supermarket-design-png.png" alt="" />
-            <p>Hola soy un texto</p>
+          <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-6 p-6 items-center">
+            <img
+              src={fakeStoreImg}
+              alt="Storefront illustration"
+              className="w-full h-auto rounded-xl shadow-lg"
+            />
+            <div>
+              <h2 className="text-2xl font-semibold mb-2">Why Shop With Us?</h2>
+              <p className="text-lg leading-relaxed">
+                Shop easily and securely at Fake Store — quality products at
+                great prices.
+              </p>
             </div>
+          </div>
         </PageSection>
-    </div>
+      </div>
     </>
-    )
+  );
 }

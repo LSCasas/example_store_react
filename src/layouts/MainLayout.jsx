@@ -1,40 +1,56 @@
-import { Link, Outlet, useNavigate } from "react-router-dom"
+import { Link, Outlet, useNavigate } from "react-router-dom";
 
 const links = [
-    {to: '/', label: 'Home', authRequired: false},
-    {to: '/productos', label: 'Products', authRequired: true},
-    {to: '/login', label: 'Login', authRequired: false},
-]
+  { to: "/", label: "Home", authRequired: false },
+  { to: "/productos", label: "Products", authRequired: true },
+  { to: "/login", label: "Login", authRequired: false },
+];
 
 export default function MainLayout() {
-    const isAuth = !!localStorage.getItem("token") 
-    const navigate = useNavigate()
+  const isAuth = !!localStorage.getItem("token");
+  const navigate = useNavigate();
 
-    function handleLogout() {
-        localStorage.removeItem("token"),
-        navigate("/")
-    }
-    
-    return (
-        <main className="h-full min-h-dvh">
-            <nav className="bg-white/50 flex flex-row justify-around text-lg font-semibold">
-                {links.map((link) => {
-                    if (link.authRequired && !isAuth) return null
-                    if(isAuth && link.to === "/login") return null
-                    return (
-                        <Link key={`link-${link.to}`} to={link.to} className="hover:bg-black/50 rounded w-full h-full text-center p-2 cursor-pointer">
-                            {link.label}
-                        </Link>
-                    );
-                })}
-                {isAuth && (
-                    <button 
-                    onClick={handleLogout}
-                    className="hover:bg-black/50 rounded w-full h-full text-center p-2 cursor-pointer">Logout</button>
-                )}
-            </nav>
-            <Outlet />
-            <footer className="w-full bg-teal-500 text-center text-black">Este es el footer</footer>
-        </main>
-    )
+  function handleLogout() {
+    localStorage.removeItem("token");
+    navigate("/");
+  }
+
+  return (
+    <main className="flex flex-col min-h-screen bg-gray-100 text-gray-800">
+      {/* NAVBAR */}
+      <nav className="bg-white/70 shadow-md px-6 py-4 flex gap-4 justify-center items-center text-lg font-medium">
+        {links.map(({ to, label, authRequired }) => {
+          if (authRequired && !isAuth) return null;
+          if (isAuth && to === "/login") return null;
+
+          return (
+            <Link
+              key={to}
+              to={to}
+              className="px-4 py-2 rounded hover:bg-gray-200 transition-colors"
+            >
+              {label}
+            </Link>
+          );
+        })}
+
+        {isAuth && (
+          <button
+            onClick={handleLogout}
+            className="px-4 py-2 rounded hover:bg-red-100 text-red-600 transition-colors"
+          >
+            Logout
+          </button>
+        )}
+      </nav>
+
+      {/* CONTENT */}
+      <section className="flex-grow p-6">
+        <Outlet />
+      </section>
+
+      {/* FOOTER */}
+      <footer className="bg-emerald-400 text-white text-center py-4"></footer>
+    </main>
+  );
 }
