@@ -1,4 +1,4 @@
-#  Example Store App
+# Example Store App
 
 > This project is part of my **frontend learning portfolio focused on React and Tailwind CSS**.
 
@@ -11,7 +11,7 @@ A responsive store application built with React, Vite, and Tailwind CSS. This ap
 - [Project Structure](#project-structure)
 - [Features](#features)
 - [Installation](#installation)
-- [Usage](#usage)
+- [Usage](#how-to-use-this-project)
 - [Authentication](#authentication)
 - [Requirements](#requirements)
 - [Contribution](#contribution)
@@ -19,7 +19,7 @@ A responsive store application built with React, Vite, and Tailwind CSS. This ap
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 react-login/
@@ -42,7 +42,7 @@ react-login/
 
 ```
 
-## 🔐 Features
+## Features
 
 - Protected routes
 - Form validation with `react-hook-form`
@@ -52,7 +52,7 @@ react-login/
 
 ---
 
-## ⚙️ Installation
+## Installation
 
 1. **Clone the repository:**
 
@@ -69,7 +69,7 @@ react-login/
 
 ---
 
-## 🚀 How to Use This Project
+## How to Use This Project
 
 Start the development server:
 
@@ -87,7 +87,7 @@ http://localhost:5173
 
 ---
 
-## 🧪 Authentication
+## Authentication
 
 ### Login Process:
 
@@ -105,7 +105,7 @@ If the credentials are incorrect, the app will show the following:
 
 User session data is stored in `localStorage` for simplicity. In a production environment, this is not recommended due to security risks like `XSS attacks`. For better security, use `HttpOnly cookies` to store tokens. Since this is a portfolio project and not handling real sensitive data, these security measures are not fully implemented.
 
-## 📌 Requirements
+## Requirements
 
 - Node.js >= 18
 - npm
@@ -142,7 +142,7 @@ If you want to contribute to this project, follow the steps below:
 
 ---
 
-## 📚 Learn More
+## Learn More
 
 To learn more about the tools and libraries used in this project, check out the following resources:
 
