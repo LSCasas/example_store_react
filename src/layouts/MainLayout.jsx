@@ -50,7 +50,7 @@ export default function MainLayout() {
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-emerald-400 text-white text-center py-4"></footer>
+      <footer className="bg-[#2ED47A] text-white text-center py-4"></footer>
     </main>
   );
 }

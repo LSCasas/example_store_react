@@ -14,14 +14,14 @@ export default function ProductsPage() {
         setProducts(prods);
       })
       .catch((error) => {
-        toast.error("Error al obtener los productos");
+        toast.error("Error retrieving products");
         console.error("[getProducts error]", error);
       });
   }, []);
 
   return (
     <main className="p-4">
-      <h1 className=" text-4xl font-semibold text-center">Productos</h1>
+      <h1 className=" text-4xl font-semibold text-center">Products</h1>
       <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 ">
         {products.map((product, idx) => {
           return (
@@ -33,9 +33,9 @@ export default function ProductsPage() {
               <p className="text-lg text-center">{product.title}</p>
               <Link
                 to={`/productos/${product.id}`}
-                className="bg-white/50 w-full rounded p-2 text-center cursor-pointer hover:bg-slate-700"
+                className="bg-white/50 w-full rounded p-2 text-center cursor-pointer hover:bg-[#25ba6b]"
               >
-                <button className="">Ver detalle</button>
+                <button className="">View details</button>
               </Link>
             </article>
           );

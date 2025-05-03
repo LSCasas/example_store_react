@@ -22,17 +22,17 @@ export default function LoginPage() {
 
       if (token) {
         window.localStorage.setItem("token", token);
-        toast.success("Bienvenido");
+        toast.success("Welcome");
         navigate("/productos");
       } else {
-        toast.error("Usuario o contraseña incorrectos");
+        toast.error("Incorrect username or password");
         setError("root.credentials", {
           type: "manual",
-          message: "Credenciales inválidas",
+          message: "Invalid credentials",
         });
       }
     } catch (error) {
-      toast.error("Error al iniciar sesión");
+      toast.error("Error logging in");
       console.error("[login error]", error);
     }
   }
@@ -57,20 +57,20 @@ export default function LoginPage() {
         <input
           type="text"
           className="border border-[#2E2E2E] rounded p-2 text-[#2E2E2E] placeholder:text-gray-400 focus:outline-[#2ED47A]"
-          placeholder="Nombre de usuario"
+          placeholder="Username"
           {...register("username", {
             required: {
               value: true,
-              message: "El nombre de usuario es requerido",
+              message: "Username is required",
             },
           })}
         />
         <input
           type={showPassword ? "text" : "password"}
           className="border border-[#2E2E2E] rounded p-2 text-[#2E2E2E] placeholder:text-gray-400 focus:outline-[#2ED47A]"
-          placeholder="Contraseña"
+          placeholder="Password"
           {...register("password", {
-            required: { value: true, message: "Contraseña requerida" },
+            required: { value: true, message: "Password is required" },
           })}
         />
         <span
@@ -80,11 +80,11 @@ export default function LoginPage() {
           {showPassword ? "🙈 Ocultar" : "🐵 Mostrar"} password
         </span>
         <button className="bg-[#2ED47A] p-3 text-white font-semibold hover:bg-[#25ba6b] rounded">
-          Ingresar
+          Log in
         </button>
         {errors.root?.credentials && (
           <p className="text-red-500 text-center text-sm">
-            Credenciales inválidas
+            Invalid credentials
           </p>
         )}
       </form>
