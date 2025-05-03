@@ -1,4 +1,4 @@
-# 🏪 Example Store App
+#  Example Store App
 
 > This project is part of my **frontend learning portfolio focused on React and Tailwind CSS**.
 
@@ -103,7 +103,7 @@ If the credentials are incorrect, the app will show the following:
 
 ### Security Note:
 
-## User session data is stored in `localStorage` for simplicity. In a production environment, this is not recommended due to security risks like `XSS attacks`. For better security, use `HttpOnly cookies` to store tokens. Since this is a portfolio project and not handling real sensitive data, these security measures are not fully implemented.
+User session data is stored in `localStorage` for simplicity. In a production environment, this is not recommended due to security risks like `XSS attacks`. For better security, use `HttpOnly cookies` to store tokens. Since this is a portfolio project and not handling real sensitive data, these security measures are not fully implemented.
 
 ## 📌 Requirements
 
