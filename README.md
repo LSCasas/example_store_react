@@ -1,6 +1,6 @@
 # Example Store App
 
-> This project is part of my **frontend learning portfolio focused on React and Tailwind CSS**.
+> This project is part of my **frontend learning portfolio focused on React and Tailwind CSS**. 
 
 A responsive store application built with React, Vite, and Tailwind CSS. This app allows users to log in, view a list of products, and access detailed views of each product. It demonstrates a complete login flow with form validation, protected routes, and toast notifications. The project integrates the API from [dummyjson.com](https://dummyjson.com/) to simulate user authentication and manage product data. Built as a practice exercise, this app offers an example of how to implement a simple store with user authentication and product browsing functionality.
 
